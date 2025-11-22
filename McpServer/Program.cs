@@ -21,7 +21,7 @@ builder.Services
 await builder.Build().RunAsync();
 
 [McpServerToolType]
-public class HelloTools
+public class McpTools
 {
     [McpServerTool, Description("Says hello to the given name.")]
     public static string sayHello(string name)
@@ -30,7 +30,7 @@ public class HelloTools
     [McpServerTool, Description("Returns all registered MCP tools.")]
     public static string list_tools()
     {
-        var methods = typeof(HelloTools).Assembly
+        var methods = typeof(McpTools).Assembly
             .GetTypes()
             .SelectMany(t => t.GetMethods(
                 System.Reflection.BindingFlags.Public
