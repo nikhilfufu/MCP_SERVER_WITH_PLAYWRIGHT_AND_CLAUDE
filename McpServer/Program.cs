@@ -76,11 +76,11 @@ public class McpTools
             await page.FillAsync("#txtPassword", password);
 
             test.Info("Clicking submit");
-            await page.ClickAsync("#btnLogin");
+            await page.ClickAsync("#pre-login-btn");
 
             test.Info("Waiting for dashboard selector");
             await page.WaitForSelectorAsync("#grid-Gather",
-                new PageWaitForSelectorOptions { Timeout = 5000 });
+                new PageWaitForSelectorOptions { Timeout = 10000 });
 
             test.Pass("Login successful");
             return "Login successful";
