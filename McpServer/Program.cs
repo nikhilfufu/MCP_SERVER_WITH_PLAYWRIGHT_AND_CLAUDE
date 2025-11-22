@@ -21,7 +21,7 @@ builder.Services
 await builder.Build().RunAsync();
 
 [McpServerToolType]
-public class McpTools
+public class McpTools 
 {
     [McpServerTool, Description("Says hello to the given name.")]
     public static string sayHello(string name)
