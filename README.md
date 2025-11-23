@@ -119,7 +119,7 @@ You should see the MCP server start up successfully.
       "args": [
         "run",
         "--project",
-        "C:/MCP_Server/McpServer/bin/Debug/net8.0/McpServer.dll"
+        "C:/createdFolder/McpServer/bin/Debug/net8.0/McpServer.dll"
       ]
     }
   }
@@ -139,7 +139,7 @@ You should see the MCP server start up successfully.
       "args": [
         "run",
         "--project",
-        "C:/MCP_Server/McpServer/bin/Debug/net8.0/McpServer.dll"
+        "C:/createdFolder/McpServer/bin/Debug/net8.0/McpServer.dll"
       ]
     }
   }
