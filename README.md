@@ -36,14 +36,12 @@ A Model Context Protocol (MCP) server that enables Claude to perform intelligent
 
 - [Prerequisites](#-prerequisites)
 - [Installation](#-installation)
-- [Configuration](#-configuration)
+- [Configuration](#️-configuration)
 - [Usage](#-usage)
-- [Available Tools](#-available-tools)
+- [Available Tools](#️-available-tools)
 - [Example Output](#-example-output)
-- [Customization](#-customization)
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
@@ -402,7 +400,6 @@ Contributions are welcome! Here's how you can help:
 ## 📞 Support
 
 - **Issues:** [GitHub Issues](https://github.com/nikhilfufu/MCP_SERVER_WITH_PLAYWRIGHT_AND_CLAUDE/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/nikhilfufu/MCP_SERVER_WITH_PLAYWRIGHT_AND_CLAUDE/discussions)
 - **Email:** nikhilfufu@gmail.com
 
 ---
