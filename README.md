@@ -63,8 +63,8 @@ Before you begin, ensure you have the following installed:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/qa-testing-mcp.git
-cd qa-testing-mcp
+git clone https://github.com/nikhilfufu/MCP_SERVER_WITH_PLAYWRIGHT_AND_CLAUDE.git
+cd MCP_SERVER_WITH_PLAYWRIGHT_AND_CLAUDE
 ```
 
 ### Step 2: Restore Dependencies
@@ -80,19 +80,19 @@ dotnet restore
 dotnet tool install --global Microsoft.Playwright.CLI
 
 # Install Chromium browser
-playwright install chromium
+pwsh bin/Debug/net8.0/playwright.ps1 install
 ```
 
 ### Step 4: Build the Project
 
 ```bash
-dotnet build -c Release
+dotnet build
 ```
 
 ### Step 5: Test the Installation
 
 ```bash
-dotnet run --project QA_MCP.csproj
+dotnet run
 ```
 
 You should see the MCP server start up successfully.
@@ -114,12 +114,12 @@ You should see the MCP server start up successfully.
 ```json
 {
   "mcpServers": {
-    "qa-testing": {
+    "csharp-mcp": {
       "command": "dotnet",
       "args": [
         "run",
         "--project",
-        "C:\\absolute\\path\\to\\qa-testing-mcp\\QA_MCP.csproj"
+        "C:/MCP_Server/McpServer/bin/Debug/net8.0/McpServer.dll"
       ]
     }
   }
@@ -134,12 +134,12 @@ You should see the MCP server start up successfully.
 ```json
 {
   "mcpServers": {
-    "qa-testing": {
+    "csharp-mcp": {
       "command": "dotnet",
       "args": [
         "run",
         "--project",
-        "C:\\Users\\YourName\\Projects\\qa-testing-mcp\\QA_MCP.csproj"
+        "C:/MCP_Server/McpServer/bin/Debug/net8.0/McpServer.dll"
       ]
     }
   }
@@ -150,12 +150,12 @@ You should see the MCP server start up successfully.
 ```json
 {
   "mcpServers": {
-    "qa-testing": {
+    "csharp-mcp": {
       "command": "dotnet",
       "args": [
         "run",
         "--project",
-        "/Users/yourname/projects/qa-testing-mcp/QA_MCP.csproj"
+        "/Users/yourname/projects/MCP_Server/McpServer/bin/Debug/net8.0/McpServer.dll"
       ]
     }
   }
@@ -310,65 +310,6 @@ After running tests, Claude will provide intelligent insights like:
 
 ---
 
-## 🎨 Customization
-
-### Modify Test Selectors
-
-Edit the selectors in `Program.cs` to match your application:
-
-```csharp
-// Current selectors
-await page.FillAsync("#txtUsername", username);
-await page.FillAsync("#txtPassword", password);
-await page.ClickAsync("#pre-login-btn");
-await page.WaitForSelectorAsync("#grid-Gather");
-
-// Change to your selectors
-await page.FillAsync("[name='email']", username);
-await page.FillAsync("[name='password']", password);
-await page.ClickAsync("button[type='submit']");
-await page.WaitForSelectorAsync(".dashboard");
-```
-
-### Add New Test Scenarios
-
-Create additional test methods in the `McpTools` class:
-
-```csharp
-[McpServerTool, Description("Test password reset functionality")]
-public static async Task<string> scenario4_PasswordReset(string url, string email)
-{
-    var test = ReportManager.CreateTest1("Scenario 4 - Password Reset");
-    
-    // Your test logic here
-    
-    return "Test result";
-}
-```
-
-### Configure Timeouts and Delays
-
-Adjust timeout settings:
-
-```csharp
-// Change timeout
-await page.WaitForSelectorAsync("#element", 
-    new PageWaitForSelectorOptions { Timeout = 15000 }); // 15 seconds
-
-// Change delay between scenarios
-await Task.Delay(3000); // 3 seconds
-```
-
-### Enable/Disable Headless Mode
-
-```csharp
-browser = await playwright.Chromium.LaunchAsync(
-    new BrowserTypeLaunchOptions { 
-        Headless = true  // Change to true for headless mode
-    });
-```
-
----
 
 ## 🐛 Troubleshooting
 
@@ -450,12 +391,6 @@ Contributions are welcome! Here's how you can help:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 🙏 Acknowledgments
 
 - **[Anthropic](https://anthropic.com)** - For Claude and the MCP protocol
@@ -466,9 +401,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/yourusername/qa-testing-mcp/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/qa-testing-mcp/discussions)
-- **Email:** your.email@example.com
+- **Issues:** [GitHub Issues](https://github.com/nikhilfufu/MCP_SERVER_WITH_PLAYWRIGHT_AND_CLAUDE/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/nikhilfufu/MCP_SERVER_WITH_PLAYWRIGHT_AND_CLAUDE/discussions)
+- **Email:** nikhilfufu@gmail.com
 
 ---
 
