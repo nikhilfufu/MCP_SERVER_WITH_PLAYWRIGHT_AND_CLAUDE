@@ -55,7 +55,7 @@ public class GPTAnalysis
         report.AppendLine("🎯 RECOMMENDATIONS:");
         report.AppendLine(GenerateRecommendations(results));
         report.AppendLine();
-        report.AppendLine("📄 Full HTML report available at: ExtentReport.html");
+        report.AppendLine("📄 Full HTML report available at: "+$"{Path.Combine(AppContext.BaseDirectory, "Reports")}");
         
         return report.ToString();
     }
